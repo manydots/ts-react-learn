@@ -1,0 +1,38 @@
+{
+  "name": "ts-react-learn",
+  "version": "0.0.1",
+  "description": "react基础回顾",
+  "scripts": {
+    "tsc": "tsc",
+    "start": "webpack-dev-server --config  webpack.config.js   --inline --colors --hot --open --compress  --mode development",
+    "build": "webpack --config webpack.config.js --compress --progress --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:manydots/ts-react-learn.git"
+  },
+  "homepage": "https://doso.jeeas.cn/",
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/prop-types": "^15.7.3",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "awesome-typescript-loader": "~5.2.1",
+    "classnames": "^2.2.6",
+    "fs-extra": "^8.1.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "~3.5.3",
+    "webpack": "~4.16.5",
+    "webpack-cli": "~3.2.3",
+    "webpack-dev-server": "~3.7.2"
+  },
+  "author": "mo.chen",
+  "license": "MIT"
+}
