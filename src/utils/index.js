@@ -18,6 +18,27 @@ function build() {
 	});
 }
 
+function findSync(startPath) {
+    let result = [];
+    function finder(paths) {
+        let files = fs.readdirSync(paths);
+        files.forEach((val, index) => {
+            let fPath = path.join(paths, val);
+            let stats = fs.statSync(fPath);
+            if (stats.isDirectory()) {
+                finder(fPath)
+            };
+            if (stats.isFile()) {
+                result.push(fPath)
+            };
+        });
+
+    };
+    finder(startPath);
+    return result;
+}
+
 module.exports = {
-	build: build
+	build: build,
+	findSync:findSync
 };
