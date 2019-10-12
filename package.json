@@ -16,12 +16,15 @@
     "react",
     "typescript"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "react-loadable": "^5.5.0"
+  },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
     "@types/prop-types": "^15.7.3",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.0",
     "awesome-typescript-loader": "~5.2.1",
     "classnames": "^2.2.6",
     "clean-webpack-plugin": "^2.0.2",
@@ -33,6 +36,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router-dom": "^5.1.2",
     "style-loader": "^1.0.0",
     "typescript": "~3.5.3",
     "uglifyjs-webpack-plugin": "^2.2.0",

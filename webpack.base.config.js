@@ -22,7 +22,8 @@ module.exports = {
 	devServer: {
 		contentBase: "./",
 		host: 'localhost',
-		port: 8082
+		port: 8082,
+		historyApiFallback: true
 	},
 	module: {
 		rules: [{
