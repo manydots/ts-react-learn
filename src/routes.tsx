@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Route, BrowserRouter,Switch} from 'react-router-dom';
+
 import './components/_style/index.less';
 
 import Loadable from 'react-loadable';
+import path from 'path';
 export interface loading {
 	isLoading?:boolean;
 	error?:any
@@ -36,7 +38,7 @@ const LoadingComponent=(props:loading) => {
     }
 };
 
-
+//serverSideRequirePath: path.join(__dirname, './build/test')
 const AsyncHome = Loadable({
     loader: () => import('./components/index'),
     loading: LoadingComponent
