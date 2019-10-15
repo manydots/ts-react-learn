@@ -7,4 +7,5 @@ react基础回顾
 ```
 	react-router-dom
 	react-loadable demo使用按需加載
+	react-loadable //使用React.Suspense代替
 ```

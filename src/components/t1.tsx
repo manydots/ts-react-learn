@@ -1,40 +1,44 @@
 import * as React from "react";
 import classNames from 'classnames';
 import PropTypes  from 'prop-types';
-import { Link } from 'react-router-dom';
-import T from './t1';
 
 export interface initProps {
     message?:string;
 }
 export default class Test extends React.Component<initProps,any> {
   static defaultProps = {
-    message:'st'
+    value:0
   };
   static propTypes = {
-    message: PropTypes.string
+    value: PropTypes.number,
+    message:PropTypes.string
   };
   
   constructor(props: initProps) {
     super(props);
     this.state = {
-      message:'sts'
+      value:34
     }
   }
   componentDidMount() {
-    //console.log('this is componentDidMount---console')
+
   }
 
   shouldComponentUpdate(){
       return true;
   }
-
+  onChange(e: React.ChangeEvent<HTMLInputElement>){
+    this.setState({
+      value:e.target.value
+    })
+    e.persist();
+    //console.log(e);
+  }
+  
   render() {
     const { message } = this.props;
-    const className = classNames('ts-react-learn', message);
-    return <div className={className} >{message} <Link to="/">返回56</Link>
-               <div><T message="this is a message" /></div>
-           </div>
+    const className = classNames('ts-react-learn', 'value');
+    return <div className={className} >{message}<input ref="input" onChange={this.onChange.bind(this)} value={this.state.value ? this.state.value:''} /></div>
   }
 }
 

@@ -13,3 +13,5 @@ package-lock.json
 .docz
 #git
 .git
+tfn.ts
+tfn.js

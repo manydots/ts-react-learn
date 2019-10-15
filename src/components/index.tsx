@@ -36,6 +36,6 @@ export default class InitComponent extends React.Component<initProps,any> {
     console.log('this is render---console');
     const { message, children, onClick } = this.props;
     const className = classNames('ts-react-learn', message);
-    return <div className={className} onClick={onClick}>this fromg {children} {message} <Link to="/test">显示1</Link></div>
+    return <div className={className} onClick={onClick}>this fromg {children} {message} <Link to="/test">显示13</Link></div>
   }
 }

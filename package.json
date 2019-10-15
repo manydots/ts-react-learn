@@ -4,7 +4,7 @@
   "description": "react基础回顾",
   "scripts": {
     "tsc": "tsc",
-    "start": "webpack-dev-server --config  webpack.config.js   --inline --colors --hot --open --compress  --mode development",
+    "dev": "webpack-dev-server --config  webpack.config.js   --inline --colors --hot --open --compress  --mode development",
     "build": "webpack --config webpack.config.js --compress --progress --mode production"
   },
   "repository": {
@@ -16,9 +16,7 @@
     "react",
     "typescript"
   ],
-  "dependencies": {
-    "react-loadable": "^5.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/classnames": "^2.2.9",
     "@types/prop-types": "^15.7.3",
