@@ -16,7 +16,8 @@ module.exports = {
 		alias: {
 			components: path.join(__dirname, 'src/components'),
 			utils: path.join(__dirname, 'src/utils'),
-			pages: path.join(__dirname, 'src/pages')
+			pages: path.join(__dirname, 'src/pages'),
+			images: path.join(__dirname, 'src/images'),
 		}
 	},
 	devServer: {
@@ -36,12 +37,23 @@ module.exports = {
 			use: [{
 				loader: MiniCssExtractPlugin.loader
 			}, 'css-loader', 'less-loader']
+		}, {
+			test: /\.(png|jpg|gif|ico)$/,
+			exclude: /node_modules/,
+			use: [{
+				loader: 'url-loader',
+				options: {
+					limit: 8192,
+					name:'images/[hash:16].[name].[ext]'
+				}
+			}]
 		}]
 	},
 	//webpack不打包资源配置
 	externals: {
 		"react": "React",
-		"react-dom": "ReactDOM"
+		"react-dom": "ReactDOM",
+		"react-router-dom": "ReactRouterDOM"
 	},
 	plugins: [
 		new MiniCssExtractPlugin({

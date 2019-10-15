@@ -18,11 +18,18 @@ export default class Test extends React.Component<initProps,any> {
   constructor(props: initProps) {
     super(props);
     this.state = {
-      message:'sts'
+      message:'sts',
+      msg:'this is a message'
     }
   }
   componentDidMount() {
     //console.log('this is componentDidMount---console')
+    const self = this;
+    setTimeout(function(){
+      self.setState({
+        msg:'changing txt'
+      })
+    },5000)
   }
 
   shouldComponentUpdate(){
@@ -33,7 +40,7 @@ export default class Test extends React.Component<initProps,any> {
     const { message } = this.props;
     const className = classNames('ts-react-learn', message);
     return <div className={className} >{message} <Link to="/">返回56</Link>
-               <div><T message="this is a message" /></div>
+               <div><T msg={this.state.msg} /></div>
            </div>
   }
 }

@@ -92,9 +92,9 @@ export default class BasicRoute extends React.Component{
           <React.Suspense fallback={rtHtml()}>
 		    	      {
                     routes.map((route) => {
-                    	return(
-                    		  <Route key={route.path} path={route.path} component={route.component}  exact={route.exact} />
-                    	)
+                      	return(
+                      		  <Route key={route.path} path={route.path} component={route.component}  exact={route.exact} />
+                      	)
                     })
                 }
            </React.Suspense>

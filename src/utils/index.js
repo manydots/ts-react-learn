@@ -7,6 +7,7 @@ function build() {
 	globby([
 		'node_modules/react/umd/react.profiling.min.js',
 		'node_modules/react-dom/umd/react-dom.profiling.min.js',
+        'node_modules/react-router-dom/umd/react-router-dom.min.js'
 	]).then(paths => {
 		fs.mkdirsSync('build/lib/');
 		paths.forEach((item) => {
