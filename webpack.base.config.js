@@ -76,6 +76,21 @@ module.exports = {
 			new UglifyJsPlugin({
 				cache: true,
 				parallel: true,
+				uglifyOptions: {
+					warnings: false,
+					compress: {
+						unused: true,
+						dead_code: true,
+						drop_debugger: true,
+						drop_console: true,
+						pure_funcs: ['console.log'] // 移除console
+					},
+					mangle: true,
+					output: {
+						comments: false,
+						ascii_only: true
+					}
+				}
 			})
 		],
 	}
