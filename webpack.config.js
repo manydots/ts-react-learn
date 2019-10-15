@@ -9,13 +9,13 @@ module.exports = (env, argv) => {
     if (argv.mode === 'production') {
         var CleanWebpackPlugin = require('clean-webpack-plugin');
         config.plugins.push(new CleanWebpackPlugin());
-        if (!fs.existsSync(buildPath) || Tools.findSync(buildPath).length <= 0) {
+        if (!fs.existsSync(buildPath) || Tools.findSync(buildPath).length <= 2) {
             setTimeout(function() {
                 Tools.build();
             }, 1000)
         };
     } else if (argv.mode === 'development') {
-        if (!fs.existsSync(buildPath) || Tools.findSync(buildPath).length <= 0) {
+        if (!fs.existsSync(buildPath) || Tools.findSync(buildPath).length <= 2) {
             Tools.build();
         };
     };
