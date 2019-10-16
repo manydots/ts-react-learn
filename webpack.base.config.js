@@ -1,10 +1,10 @@
 var path = require('path');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-var vendor = ['react', 'react-dom'];
+var vendor = ['react', 'react-dom', 'react-router-dom'];
 module.exports = {
 	entry: {
-		index: './src/app.tsx'
+		'index/index': './src/app.tsx'
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
@@ -50,23 +50,23 @@ module.exports = {
 		}]
 	},
 	//webpack不打包资源配置
-	externals: {
-		"react": "React",
-		"react-dom": "ReactDOM",
-		"react-router-dom": "ReactRouterDOM"
-	},
+	// externals: {
+	// 	"react": "React",
+	// 	"react-dom": "ReactDOM",
+	// 	"react-router-dom": "ReactRouterDOM"
+	// },
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: 'css/[name].bundle.css'
+			filename: '[name].bundle.css'
 		})
 	],
 	optimization: {
 		splitChunks: {
-			//chunks: "all",开发模式异常
+			//chunks: "all",//开发模式异常
 			cacheGroups: {
 				commons: {
 					chunks: "all",
-					name: "commons",
+					name: "lib/commons",
 					chunks: "initial",
 					minChunks: 2
 				}

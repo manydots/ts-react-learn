@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "module": "esnext",
         "strictNullChecks": true,
         "moduleResolution": "node",

@@ -37,9 +37,14 @@ function findSync(startPath) {
     };
     finder(startPath);
     return result;
+};
+
+function renderHtml(){
+  return null
 }
 
 module.exports = {
 	build: build,
-	findSync:findSync
+	findSync:findSync,
+    renderHtml:renderHtml
 };
