@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes  from 'prop-types';
 import v15 from 'images/v15.jpg';
 import v16 from 'images/v16.4.jpg';
+import LazyLoad from 'react-lazyload';
 export interface initProps {
     msg?:string;
 }
@@ -130,15 +131,21 @@ export default class Test extends React.Component<initProps,any> {
       e:e
     })
   }
+
+  runArrowFunction = (name?:any)=>(event?:any)=>{
+      //箭头函数定义方式
+      //(JSX arribute) React.Attributes<HTMLDivElement>.onClick?
+      // TS2322: Type 'void' is not assignable to type '((event: MouseEvent<HTMLDivElement, MouseEvent>) => void) | undefined'.
+      console.log(name,event);
+  }
   
   render() {
     const { msg } = this.props;
     const className = classNames('ts-react-learn', 'value');
     //console.log(this.state)
     return (<div className={className} >
-              
               <div>
-                  {msg}
+                  <div onClick={this.runArrowFunction(msg)}>{msg}</div>
                   <input style={{width:'30px'}} ref="input" onChange={this.onChange.bind(this)} value={this.state.value ? this.state.value:''} />
                   <button type="button" onClick={this.onButtonClick.bind(this)}>click</button>
               </div>
@@ -161,10 +168,10 @@ export default class Test extends React.Component<initProps,any> {
                                     }
                                     <div>
                                       {
-                                        item.version == 'v15' ? (<img src={v15} />) :null
+                                        item.version == 'v15' ? (<LazyLoad height={200}><img src={v15} /></LazyLoad>) :null
                                       }
                                       {
-                                        item.version == 'v16.4' ? (<img src={v16} />) :null
+                                        item.version == 'v16.4' ? (<LazyLoad height={200}><img src={v16} /></LazyLoad>) :null
                                       }
                                     </div>
                                 </div>

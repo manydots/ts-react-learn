@@ -77,7 +77,7 @@ const routes = [{
 	component: AsyncHome,
 	exact: true
 }, {
-	path: '/test',
+	path: '/testing',
 	component: AsyncTest,
 	exact: true
 }];
